@@ -64,7 +64,7 @@ class Pootlepress_Align_Right {
 	 */	
 	public function add_theme_options ( $o ) {
 		$o[] = array(
-				'name' => 'Align Menu Right', 
+				'name' => 'Right Align', 
 				'type' => 'subheading'
 				);
 		$o[] = array(
@@ -76,8 +76,8 @@ class Pootlepress_Align_Right {
 				);
 		$o[] = array(
 				'id' => 'pootlepress-align-right-option', 
-				'name' => __( 'Enable or Disable the Right Align', 'pootlepress-align-right' ), 
-				'desc' => __( 'Click here to enable or disable the Pootlepress sticky nav', 'pootlepress-align-right' ), 
+				'name' => __( 'Align Menu Right', 'pootlepress-align-right' ), 
+				'desc' => __( 'Enable Align Menu Right', 'pootlepress-align-right' ), 
 				'std' => 'true',
 				'type' => 'checkbox'
 				);
