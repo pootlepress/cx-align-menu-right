@@ -1,11 +1,11 @@
 <?php
 /*
-Plugin Name: Pootlepress Align Right
-Plugin URI: http://pootlepress.co.uk/
-Description: If you want to align your menu to the right, then install me!
+Plugin Name: Canvas Extension - Align Menu Right
+Plugin URI: http://pootlepress.com/canvas-extensions/
+Description: An extension for WooThemes Canvas that aligns the menu to the right of the logo.
 Version: 1.0.0
-Author: Pootlepress
-Author URI: http://pootlepress.co.uk/
+Author: PootlePress
+Author URI: http://pootlepress.com/
 License: GPL version 2 or later - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 */
 /*  Copyright 2014  Pootlepress  (email : jamie@pootlepress.co.uk)
