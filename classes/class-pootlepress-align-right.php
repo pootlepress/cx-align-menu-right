@@ -64,7 +64,7 @@ class Pootlepress_Align_Right {
 	 */	
 	public function add_theme_options ( $o ) {
 		$o[] = array(
-				'name' => 'Right Align', 
+				'name' => 'Align Menu Right', 
 				'type' => 'subheading'
 				);
 		$o[] = array(
