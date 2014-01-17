@@ -1,0 +1,28 @@
+#navigation {
+    margin-bottom: 1em;
+}
+
+@media only screen and (min-width: 768px) {   
+    /* Hide old navigation from desktop (still used for mobile navigation) */
+    #navigation { display: none !important; }
+	
+	#navigation .menus {
+		float: right;
+	}
+
+    /* Style header navigation */
+    #header #navigation { 
+        display: block !important;
+        float: right; 
+        width: auto; 
+        clear:none; 
+        margin-top:0.5em;
+        max-width: 100%; // This can be changed
+        background: none;
+    }
+    
+}
+@media only screen and (max-width: 767px) {
+    /* Hide new navigation from mobile */
+    #header #navigation { display: none !important; }
+}
