@@ -6,6 +6,9 @@
     /* Hide old navigation from desktop (still used for mobile navigation) */
     #navigation { display: none !important; }
 	
+    /* Hide old navigation (menu packs) from desktop (still used for mobile navigation) */
+    #navigation_beautiful_type, #navigation_centred, #navigation_header, #navigation_top_align, #navigation_top_tabs { display: none !important; }
+	
 	#navigation .menus {
 		float: right;
 	}

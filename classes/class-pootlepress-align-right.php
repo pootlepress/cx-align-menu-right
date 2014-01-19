@@ -143,6 +143,19 @@ class Pootlepress_Align_Right {
 		if ($_rightalignenabled == 'true') {
 			wp_enqueue_style(esc_attr('rightalign'), esc_url(plugins_url('styles/rightalign.css', $this->file)));
 			remove_action('woo_header_after','woo_nav', 10);
+			/*$activeplugins = get_option('active_plugins');
+			if (in_array('cx-menu-pack/pootlepress-menu-pack.php',$activeplugins)) {
+				$menuoption = get_option('pootlepress-menu-pack-menu-style');
+				if ($menuoption == 'beautiful_type') {
+					add_action( 'woo_header_after','woo_nav_beautiful_type', 10 ); 		
+				} else if ($menuoption != 'none') {
+					add_action('woo_header_inside', 'woo_nav_custom', 10);
+				} else {
+					add_action('woo_header_inside', 'woo_nav', 10);
+				}
+			} else {
+				add_action('woo_header_inside', 'woo_nav', 10);
+			}*/
 			add_action('woo_header_inside', 'woo_nav', 10);
 		}
 	} // End load_align_right()
