@@ -26,6 +26,30 @@
     
 }
 @media only screen and (max-width: 767px) {
-    /* Hide new navigation from mobile */
-    #header #navigation { display: none !important; }
+    /* Change mobile nav to fixed */
+	#header #navigation {
+		position: fixed !important;
+	}
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) { 
+    /* Safari only override */
+    ::i-block-chrome, #header #navigation {
+		left: -14px;
+		top: -39px;
+	}
+}
+@media only screen and (min-device-width : 320px) and (max-device-width : 568px) {
+	/*iPhone5 Override nav*/
+	#header #navigation {
+		left: -14px;
+		top: -39px;
+	}
+}
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+	/*iPhone 2G-4S Override nav*/
+	#header #navigation {
+		left: -14px;
+		top: -39px;
+	}
 }
