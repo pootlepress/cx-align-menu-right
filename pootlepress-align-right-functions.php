@@ -15,4 +15,20 @@ if (!function_exists('check_main_heading')) {
 		}
 	}
 }
+
+/*
+ * Fixes compatibility issues with sticky nav plugin on mobile nav
+ */
+function fixStickyMobile(){
+	?>
+	<script type="text/javascript">
+	jQuery(function ($) {
+		$(document).ready(function() {							
+			//Remove navigation styles for mobile
+			$('#navigation').css({position:'','min-height':'',left:'','margin-top':'',width:''});			
+		});
+	});
+	</script>
+<?
+}
 ?>
