@@ -30,6 +30,6 @@ License: GPL version 2 or later - http://www.gnu.org/licenses/old-licenses/gpl-2
 	require_once( 'classes/class-pootlepress-align-right.php' );
 
     $GLOBALS['pootlepress_align_right'] = new Pootlepress_Align_Right( __FILE__ );
-    $GLOBALS['pootlepress_align_right']->version = '1.0.0';
+    $GLOBALS['pootlepress_align_right']->version = '1.0.2';
 	
 ?>
