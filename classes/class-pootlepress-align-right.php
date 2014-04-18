@@ -68,10 +68,10 @@ class Pootlepress_Align_Right {
 				'type' => 'subheading'
 				);
 		$o[] = array(
-				'name' => 'Full Width',
+				'name' => 'Support',
 				'desc' => '',
 				'id' => 'pootlepress-align-right-notice',
-				'std' => sprintf(("The Align Right plugin does not currently work with the full-width button. Find more plugins here <a href=\"%s\" target=\"_blank\">http://www.pootlepress.com/shop</a>" ), "http://www.pootlepress.com/shop" ),
+				'std' => sprintf(("Thanks for using this free Canvas Extension. Please email support@pootlpress.com if you experience any problems. Find more Canvas Extensions here <a href=\"%s\" target=\"_blank\">http://www.pootlepress.com/shop</a>" ), "http://www.pootlepress.com/shop" ),
 				'type' => 'info'
 				);
 		$o[] = array(
