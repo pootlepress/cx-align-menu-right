@@ -54,6 +54,9 @@ class Pootlepress_Align_Right {
 
 		// Lood for a method/function for the selected style and load it.
 		add_action('init', array( &$this, 'load_align_right' ) );
+
+        add_action('wp_head', array($this, 'option_css'));
+
 	} // End __construct()
 
 	/**
@@ -164,6 +167,19 @@ class Pootlepress_Align_Right {
 		}
 	} // End load_align_right()
 	
+    public function option_css() {
+        $isBoxedLayout = get_option('woo_layout_boxed') == 'true';
+        $css = '';
+        if ($isBoxedLayout) {
+            $css .= "@media only screen and (max-width: 767px) {\n";
+            $css .= "#inner-wrapper { padding-left: 0 !important; padding-right: 0 !important; }\n";
+            $css .= "#inner-wrapper > .nav-toggle { margin-left: 0 !important; margin-right: 0 !important; }\n";
+            $css .= "}\n";
+        }
+
+        echo "<style>\n $css \n</style>\n";
+    }
+
 
 } // End Class
 
