@@ -33,6 +33,8 @@ class Pootlepress_Align_Right {
 	private $file;
 	private $_menu_style;
 
+    private $enabled;
+
 	/**
 	 * Constructor.
 	 * @param string $file The base file of the plugin.
@@ -52,10 +54,15 @@ class Pootlepress_Align_Right {
 		// Add the custom theme options.
 		add_filter( 'option_woo_template', array( &$this, 'add_theme_options' ) );
 
+        add_action( 'wp_enqueue_scripts', array( &$this, 'poo_hookup_scripts'));
+        add_action( 'woothemes_wp_head_after', array( &$this, 'poo_inline_javascript'), 10 );
+
 		// Lood for a method/function for the selected style and load it.
 		add_action('init', array( &$this, 'load_align_right' ) );
 
         add_action('wp_head', array($this, 'option_css'));
+
+        $this->enabled = get_option('pootlepress-align-right-option', 'true') == 'true';
 
 	} // End __construct()
 
@@ -86,7 +93,73 @@ class Pootlepress_Align_Right {
 				);
 		return $o;
 	} // End add_theme_options()
-	
+
+    public function poo_hookup_scripts() {
+
+        if ($this->enabled) {
+            wp_enqueue_script('align-menu-right',
+                plugins_url( '../align-menu-right.js' , __FILE__ ),
+                array( 'jquery' ),
+                false, false
+            );
+        }
+    }
+
+    // generate plugin custom inline javascript - driven by theme options
+    public function poo_inline_javascript() {
+        echo "\n" . '<!-- Sticky Header Inline Javascript -->' . "\n";
+        echo '<script>' . "\n";
+        echo "	/* set global variable for pootlepress common component area  */\n";
+        echo '	if (typeof pootlepress === "undefined") { var pootlepress = {} }' . "\n";
+        echo '	jQuery(document).ready(function($) {' . "\n";
+        echo $this->poo_inline_styling_javascript();
+        echo '	});' . "\n";
+        echo '</script>' . "\n";
+    }
+
+    /**
+     * Generate the javascript statement to invoke the Sticky Header jQuery function
+     * with the options based on the settings of the theme options.
+     * @access private
+     * @since  2.0.1
+     * @return  (String) javascript command to embed in the HTML document
+     */
+    private function poo_inline_styling_javascript() {
+        global $woo_options;
+        $output = '    ';
+        /* ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- */
+        /* ----- Sticky Header Options   ----- ----- ----- ----- ----- ----- ----- ----- ----- */
+        $_stickyenabled  	= 'false';
+        $_wpadminbarhide 	= 'false';
+        $_alignr = $this->enabled;
+//        $_stickyMobileEnabled = get_option('pootlepress-sticky-header-sticky-mobile', 'false');
+        $_stickyMobileEnabled = 'false';
+        $_fixed_mobile_layout = get_option('woo_remove_responsive', 'false');
+        if ($_fixed_mobile_layout == 'true')				// if responsive disabled
+            $_responsive = 'false'; else $_responsive = 'true';
+        $_opacity = 100;
+
+        $borderTop = get_option('woo_border_top');
+        if ($borderTop && isset($borderTop['width']) && $borderTop['width'] > 0) {
+            $borderTopJson = json_encode($borderTop);
+        } else {
+            $borderTopJson = json_encode(false);
+        }
+
+        $layoutWidth = get_option('woo_layout_width');
+
+        $output .= "    $('#header').alignMenuRight( { stickyhdr : $_stickyenabled";
+        $output .= ", stickynav : $_stickyenabled";
+        $output .= ", alignright : $_alignr";
+        $output .= ", mobile : $_stickyMobileEnabled";
+        $output .= ", responsive : $_responsive";
+        $output .= ", opacity : $_opacity";
+        $output .= ", wpadminbar : $_wpadminbarhide";
+        $output .= ", bordertop : $borderTopJson";
+        $output .= ", layoutWidth: $layoutWidth";
+        $output .= ' });' . "\n";
+        return $output;
+    }
 	/**
 	 * Load the plugin's localisation file.
 	 * @access public
@@ -166,19 +239,6 @@ class Pootlepress_Align_Right {
 			}
 		}
 	} // End load_align_right()
-	
-    public function option_css() {
-        $isBoxedLayout = get_option('woo_layout_boxed') == 'true';
-        $css = '';
-        if ($isBoxedLayout) {
-            $css .= "@media only screen and (max-width: 767px) {\n";
-            $css .= "#inner-wrapper { padding-left: 0 !important; padding-right: 0 !important; }\n";
-            $css .= "#inner-wrapper > .nav-toggle { margin-left: 0 !important; margin-right: 0 !important; }\n";
-            $css .= "}\n";
-        }
-
-        echo "<style>\n $css \n</style>\n";
-    }
 
 
 } // End Class
