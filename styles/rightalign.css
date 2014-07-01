@@ -28,7 +28,8 @@
 @media only screen and (max-width: 767px) {
     /* Change mobile nav to fixed */
 	#header #navigation {
-		top: -40px;
+		top: -78px;
+        left: 1px;
 	}
 }
 
