@@ -27,10 +27,15 @@
 }
 @media only screen and (max-width: 767px) {
     /* Change mobile nav to fixed */
-	#header #navigation {
+	body.full-header #header #navigation {
 		top: -78px;
         left: 1px;
 	}
+
+    body:not(.full-header) #header #navigation {
+        top: -78px;
+        left: 0;
+    }
 }
 
 @media screen and (-webkit-min-device-pixel-ratio:0) { 
