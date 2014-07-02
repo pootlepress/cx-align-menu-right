@@ -54,8 +54,8 @@ class Pootlepress_Align_Right {
 		// Add the custom theme options.
 		add_filter( 'option_woo_template', array( &$this, 'add_theme_options' ) );
 
-        add_action( 'wp_enqueue_scripts', array( &$this, 'poo_hookup_scripts'));
-        add_action( 'woothemes_wp_head_after', array( &$this, 'poo_inline_javascript'), 10 );
+        add_action( 'wp_enqueue_scripts', array( &$this, 'poo_hookup_scripts'), 100);
+        add_action( 'wp_head', array( &$this, 'poo_inline_javascript'), 10 );
 
 		// Lood for a method/function for the selected style and load it.
 		add_action('init', array( &$this, 'load_align_right' ) );
@@ -107,14 +107,16 @@ class Pootlepress_Align_Right {
 
     // generate plugin custom inline javascript - driven by theme options
     public function poo_inline_javascript() {
-        echo "\n" . '<!-- Sticky Header Inline Javascript -->' . "\n";
-        echo '<script>' . "\n";
-        echo "	/* set global variable for pootlepress common component area  */\n";
-        echo '	if (typeof pootlepress === "undefined") { var pootlepress = {} }' . "\n";
-        echo '	jQuery(document).ready(function($) {' . "\n";
-        echo $this->poo_inline_styling_javascript();
-        echo '	});' . "\n";
-        echo '</script>' . "\n";
+        if ($this->enabled) {
+            echo "\n" . '<!-- Sticky Header Inline Javascript -->' . "\n";
+            echo '<script>' . "\n";
+            echo "	/* set global variable for pootlepress common component area  */\n";
+            echo '	if (typeof pootlepress === "undefined") { var pootlepress = {} }' . "\n";
+            echo '	jQuery(document).ready(function($) {' . "\n";
+            echo $this->poo_inline_styling_javascript();
+            echo '	});' . "\n";
+            echo '</script>' . "\n";
+        }
     }
 
     /**
@@ -146,7 +148,8 @@ class Pootlepress_Align_Right {
             $borderTopJson = json_encode(false);
         }
 
-        $layoutWidth = get_option('woo_layout_width');
+        $layoutWidth = (int)get_option('woo_layout_width');
+
 
         $output .= "    $('#header').alignMenuRight( { stickyhdr : $_stickyenabled";
         $output .= ", stickynav : $_stickyenabled";

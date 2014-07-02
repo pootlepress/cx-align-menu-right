@@ -34,8 +34,12 @@
 
     body:not(.full-header) #header #navigation {
         top: -78px;
-        left: 0;
+        left: -28px;
     }
+
+    /*body.show-nav:not(.full-header) #header #navigation {*/
+        /*left: -73px;*/
+    /*}*/
 }
 
 @media screen and (-webkit-min-device-pixel-ratio:0) { 

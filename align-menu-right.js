@@ -46,6 +46,7 @@
 			// setup ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
 			pootlepress.stickyHdrOptions = o;		// save my presence in global variable
             pootlepress.poo = poo;
+            pootlepress.hasRunBefore = true;
 			poo.elm = $(this); poo.hdr = $(this);
 			poo.nav = ( poo.isFullWidth ) ? $('#nav-container') : $('#navigation');
 			poo.noTransparency.backgroundColor = $('body').css( 'background-color' );
@@ -76,6 +77,14 @@
 				poo.nav.css('min-height', '0');
 			}
 
+
+            if (poo.isMobile) {
+//                console.log('Is Mobile: ' + window.innerWidth + '\n');
+                $('#navigation').css('width', ($('body').innerWidth() * 0.8) + 'px');
+            } else {
+                $('#navigation').css('width', '100%');
+            }
+
             poo.hdr.attr('bg-color', poo.hdr.css('background-color'));
 
 			// move nav menu if align right option selected ----- ----- ----- ----- ----- 
@@ -85,10 +94,23 @@
     	});
     };
 
-    $(document).ready(function () {
-        $(window).resize(function () {
-           $('#header').alignMenuRight(pootlepress.stickyHdrOptions);
-        });
+    $(window).resize(function () {
+        resizeCheck();
     });
+
+    $(window).load(function () {
+        resizeCheck();
+    });
+
+
+    function resizeCheck() {
+        if (typeof pootlepress != 'undefined' && typeof pootlepress.hasRunBefore != 'undefined') {
+//            console.log('Run check\n');
+            $('#header').alignMenuRight(pootlepress.stickyHdrOptions);
+
+        } else {
+//            console.log('Don\'t run check\n');
+        }
+    }
 
 } ( jQuery ));
