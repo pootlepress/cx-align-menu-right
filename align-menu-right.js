@@ -80,6 +80,16 @@
 
             if (poo.isMobile) {
 //                console.log('Is Mobile: ' + window.innerWidth + '\n');
+//                if ($('#wpadminbar').height() > 0) {
+//                    var offset = $('#navigation').offset();
+//                    if (offset.top == 0) {
+//                        var top = $('#navigation').css('top');
+//                        var topInt = parseInt(top.replace('px', ''));
+//
+//                        topInt += $('#wpadminbar').height();
+//                        $('#navigation').css('top', topInt + 'px');
+//                    }
+//                }
                 $('#navigation').css('width', ($('body').innerWidth() * 0.8) + 'px');
             } else {
                 $('#navigation').css('width', '100%');

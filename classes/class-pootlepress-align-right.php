@@ -60,7 +60,7 @@ class Pootlepress_Align_Right {
 		// Lood for a method/function for the selected style and load it.
 		add_action('init', array( &$this, 'load_align_right' ) );
 
-        add_action('wp_head', array($this, 'option_css'));
+//        add_action('wp_head', array($this, 'option_css'));
 
         $this->enabled = get_option('pootlepress-align-right-option', 'true') == 'true';
 
