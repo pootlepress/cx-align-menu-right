@@ -50,4 +50,3 @@ function fixStickyMobile(){
 	</script>
 <?php
 }
-?>
