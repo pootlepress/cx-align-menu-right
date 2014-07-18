@@ -41,7 +41,8 @@ function pp_ar_updater()
     }
     $data = get_plugin_data(__FILE__);
     $wptuts_plugin_current_version = $data['Version'];
-    $wptuts_plugin_remote_path = 'http://jamiemarsland.staging.wpengine.com/updater';
+    $wptuts_plugin_remote_path = 'http://jamiemarsland.staging.wpengine.com/?updater=1';
+//    $wptuts_plugin_remote_path = 'http://pootle.localhost/wordpress/?updater=1';
     $wptuts_plugin_slug = plugin_basename(__FILE__);
     new Pootlepress_Updater ($wptuts_plugin_current_version, $wptuts_plugin_remote_path, $wptuts_plugin_slug);
 }
