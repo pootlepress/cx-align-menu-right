@@ -238,7 +238,7 @@ class Pootlepress_Align_Right {
 			}*/
 			add_action('woo_header_inside', 'woo_nav', 10);
 			if ($_stickyenabled == 'true') {
-				add_action('wp_footer', 'fixStickyMobile',10);
+				add_action('wp_footer', 'pp_ar_fixStickyMobile',10);
 			}
 		}
 	} // End load_align_right()
