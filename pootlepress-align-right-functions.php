@@ -38,7 +38,7 @@ if(!function_exists('poo_commit_suicide')) {
 /*
  * Fixes compatibility issues with sticky nav plugin on mobile nav
  */
-function fixStickyMobile(){
+function pp_ar_fixStickyMobile(){
 	?>
 	<script type="text/javascript">
 	jQuery(function ($) {

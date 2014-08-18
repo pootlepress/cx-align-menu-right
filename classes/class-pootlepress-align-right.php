@@ -216,12 +216,18 @@ class Pootlepress_Align_Right {
 	 * @since   1.0.0
 	 * @return  void
 	 */
+
+    public function front_end_style() {
+        wp_enqueue_style(esc_attr('rightalign'), esc_url(plugins_url('styles/rightalign.css', $this->file)));
+    }
+
 	public function load_align_right () {
 		$_rightalignenabled  = get_option('pootlepress-align-right-option');
 		$_stickyenabled  = get_option('pootlepress-sticky-nav-option');
 		if ($_rightalignenabled == '') $enabled = 'true';
 		if ($_rightalignenabled == 'true') {
-			wp_enqueue_style(esc_attr('rightalign'), esc_url(plugins_url('styles/rightalign.css', $this->file)));
+			add_action('wp_enqueue_scripts', array($this, 'front_end_style'));
+
 			remove_action('woo_header_after','woo_nav', 10);
 			/*$activeplugins = get_option('active_plugins');
 			if (in_array('cx-menu-pack/pootlepress-menu-pack.php',$activeplugins)) {
