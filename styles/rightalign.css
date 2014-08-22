@@ -19,7 +19,7 @@
         float: right; 
         width: auto; 
         clear:none; 
-        margin-top:0.5em;
+        margin-top: 0;
         max-width: 100%; // This can be changed
         background: none;
     }
@@ -27,14 +27,17 @@
 }
 @media only screen and (max-width: 767px) {
     /* Change mobile nav to fixed */
-	body.full-header #header #navigation {
+
+    /* #inner-wrapper has padding-left and padding-right
+    if full-width (can be triggered by full header or full footer */
+	body.full-width #header #navigation {
 		top: -39px;
         left: 0px;
 	}
 
-    body:not(.full-header) #header #navigation {
+    body:not(.full-width) #header #navigation {
         top: -39px;
-        left: 0px;
+        left: -14px;
     }
 
     /*body.show-nav:not(.full-header) #header #navigation {*/
