@@ -87,7 +87,7 @@ class Pootlepress_Align_Right {
 		$o[] = array(
 				'id' => 'pootlepress-align-right-option', 
 				'name' => __( 'Align Menu Right', 'pootlepress-align-right' ), 
-				'desc' => __( 'Enable Align Menu Right. When align menu right is enabled the primary nav bottom margin in Canvas will not have a visible effect. To add a margin under the header for space between the header and the content use the a header bottom margin', 'pootlepress-align-right' ),
+				'desc' => __( 'Enable Align Menu Right. <br />When align menu right is enabled the primary nav bottom margin in Canvas will not have a visible effect. To add a margin under the header for space between the header and the content use the a header bottom margin', 'pootlepress-align-right' ),
 				'std' => 'true',
 				'type' => 'checkbox'
 				);
