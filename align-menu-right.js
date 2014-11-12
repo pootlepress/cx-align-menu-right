@@ -98,8 +98,10 @@
             poo.hdr.attr('bg-color', poo.hdr.css('background-color'));
 
 			// move nav menu if align right option selected ----- ----- ----- ----- ----- 
-			if ( poo.options.alignright && !poo.isMobile)				// not for mobile 
-				$('#logo').css(poo.logoMods).after(poo.nav.css(poo.alignRightNav).detach());
+			if ( poo.options.alignright && !poo.isMobile) {				// not for mobile
+                $('#logo').css(poo.logoMods);
+                $('.header-widget').after(poo.nav.css(poo.alignRightNav));
+            }
 
     	});
     };
