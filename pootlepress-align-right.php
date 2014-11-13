@@ -28,6 +28,7 @@ License: GPL version 2 or later - http://www.gnu.org/licenses/old-licenses/gpl-2
 
 	require_once( 'pootlepress-align-right-functions.php' );
 	require_once( 'classes/class-pootlepress-align-right.php' );
+    require_once( 'classes/class-pootlepress-canvas-options.php' );
     require_once( 'classes/class-pootlepress-updater.php');
 
     $GLOBALS['pootlepress_align_right'] = new Pootlepress_Align_Right( __FILE__ );
