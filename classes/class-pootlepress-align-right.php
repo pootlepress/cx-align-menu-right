@@ -102,7 +102,7 @@ class Pootlepress_Align_Right {
 
         global $PCO;
         $PCO->add_options($afterName, $afterType, $o);
-        
+
 	} // End add_theme_options()
 
     public function poo_hookup_scripts() {
