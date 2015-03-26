@@ -74,7 +74,7 @@
 			} else {
 				poo.stickyHdr.width =  poo.hdrDims.trueOuterWidth;
  				poo.stickyNav.width = poo.options.layoutWidth;
-				poo.nav.css('min-height', '0');
+				//poo.nav.css('min-height', '0');
 			}
 
 
