@@ -74,7 +74,7 @@
 			} else {
 				poo.stickyHdr.width =  poo.hdrDims.trueOuterWidth;
  				poo.stickyNav.width = poo.options.layoutWidth;
-				//poo.nav.css('min-height', '0');
+				poo.nav.css('min-height', '0');
 			}
 
 
@@ -91,8 +91,15 @@
 //                    }
 //                }
                 $('#navigation').css('width', ($('body').innerWidth() * 0.8) + 'px');
+				
+				//Explicitly setting nav height equal to #inner-wrapper
+				var inner_wrap_height = $('#inner-wrapper').height();
+				poo.nav.css('height', inner_wrap_height);
+
             } else {
                 $('#navigation').css('width', '100%');
+				
+				poo.nav.css('height', '');
             }
 
             poo.hdr.attr('bg-color', poo.hdr.css('background-color'));
