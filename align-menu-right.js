@@ -94,12 +94,10 @@
 				
 				//Explicitly setting nav height equal to #inner-wrapper
 				var inner_wrap_height = $('#inner-wrapper').height();
-				poo.nav.css('height', inner_wrap_height);
+				$('#navigation').css('height', inner_wrap_height);
 
             } else {
-                $('#navigation').css('width', '100%');
-				
-				poo.nav.css('height', '');
+                $('#navigation').css({width: '100%',height: ''});
             }
 
             poo.hdr.attr('bg-color', poo.hdr.css('background-color'));
