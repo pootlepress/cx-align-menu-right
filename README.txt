@@ -3,10 +3,10 @@ Canvas Extensions - Align Menu Right
 
 Versions
 
-24.04.2015 - Version 1.2
+24.04.2015 - Version 1.1.2
 
-  * New - updated options
-  * New - help text added
+  * Tweak - updated options method
+  * Tweak - help text added
   * Tweak - facility to move menu below header widget
   * Fix - compatibility issues with mobile menu
 
