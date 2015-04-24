@@ -3,7 +3,7 @@
 Plugin Name: Canvas Extension - Align Menu Right
 Plugin URI: http://pootlepress.com/canvas-extensions/
 Description: An extension for WooThemes Canvas that aligns the menu to the right of the logo.
-Version: 1.1.1
+Version: 1.1.2
 Author: PootlePress
 Author URI: http://pootlepress.com/
 License: GPL version 2 or later - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
@@ -32,7 +32,7 @@ License: GPL version 2 or later - http://www.gnu.org/licenses/old-licenses/gpl-2
     require_once( 'classes/class-pootlepress-updater.php');
 
     $GLOBALS['pootlepress_align_right'] = new Pootlepress_Align_Right( __FILE__ );
-    $GLOBALS['pootlepress_align_right']->version = '1.1.1';
+    $GLOBALS['pootlepress_align_right']->version = '1.1.2';
 
 add_action('init', 'pp_ar_updater');
 function pp_ar_updater()
