@@ -5,10 +5,10 @@ Versions
 
 24.04.2015 - Version 1.2
 
-  *New - help text added
-  *Tweak - facility to move menu below header widget
-  *New - updated options
-  *Fix - compatibility issues with mobile menu
+  * New - updated options
+  * New - help text added
+  * Tweak - facility to move menu below header widget
+  * Fix - compatibility issues with mobile menu
 
 v1.1.1 - Make compatible with Sticky Header 2 & fix mobile panel issue
 
