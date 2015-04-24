@@ -3,9 +3,9 @@ Canvas Extensions - Align Menu Right
 
 Versions
 
-24.04.2015 - Version 1.1.2
+24.04.2015 - Version 1.2
 
-  * Tweak - updated options method
+  * New - updated options method allowing for WooThemes child theme compatibility
   * Tweak - help text added
   * Tweak - facility to move menu below header widget
   * Fix - compatibility issues with mobile menu
